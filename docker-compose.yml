@@ -1,0 +1,50 @@
+version: "3.8"
+
+services:
+
+  mongo:
+    image: mongo
+    container_name: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin 
+      MONGO_INITDB_ROOT_PASSWORD: admin
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./database:/data/db
+
+  mongo-express:
+    image: mongo-express
+    container_name: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: admin 
+      ME_CONFIG_MONGODB_ADMINPASSWORD: admin
+      ME_CONFIG_MONGODB_URL: mongodb://admin:admin@mongo:27017/?authSource=admin
+    depends_on:
+      - mongo
+
+  frontend:
+    container_name: frontend
+    build:
+      context: "./frontend"
+      dockerfile: Dockerfile 
+    volumes:
+      - /frontend/node_modules
+      - ./frontend:/app
+    ports:
+      - "3000:3000"
+
+  backend:
+    container_name: backend
+    build:
+      context: "./backend"
+      dockerfile: Dockerfile
+    volumes:
+      - /backend/node_modules
+      - ./backend:/app
+    ports:
+      - "5000:5000"
