@@ -8,11 +8,11 @@ const houseSchema = mongoose.Schema (
         image: String,
         price: Number,
         bathrooms: Number,
-        bedrooms: Number
+        bedrooms: Number,
     }, 
     {
         timestamps: true
     }
 );
 
-modules.exports = mongoose.model('House', houseSchema);
+module.exports = mongoose.model('House', houseSchema);

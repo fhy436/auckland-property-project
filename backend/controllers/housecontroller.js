@@ -1,42 +1,40 @@
 const asyncHandler = require("express-async-handler")
+
+const House = require("../models/houseSchema");
+
 // @desc Get houses
 // @route GET /api/houses
 // @access Private
-const getHouse = async (req, res) => { 
-    if(!req.body.text)  {
-        res.status(400)
-        throw new Error('No text provided');
-    }
-    res.status(200).json({message: 'Get house'});
-};
+const getHouses = asyncHandler(async (req, res) => { 
+    const houses = await House.find();
+    res.status(200).json(houses);
+});
 
 
 // @desc Set houses
 // @route POST /api/houses
 // @access Private
 const setHouse = async (req, res) => { 
-    res.status(200).json({message: 'Get house'});
-};
+    if (!req.body.name || !req.body.address || !req.body.suburb || !req.body.price || !req.body.bathrooms) {
+        return res.status(400).json({
+          success: false,
+          error: "Please enter all fields",
+        });
+      }
+    
+      const house = await House.create({
+        name: req.body.name,
+        address: req.body.address,
+        suburb: req.body.suburb,
+        price: req.body.price,
+        bathrooms: req.body.bathrooms,
+        bedrooms: req.body.bedrooms,
+      });
+      res.status(200).json(house);
+    };
 
-
-// @desc Update houses
-// @route PUT /api/houses/:id
-// @access Private
-const updateHouse = async (req, res) => { 
-    res.status(200).json({message: 'Update house ${req.params.id}'});
-};
-
-
-// @desc Delete houses
-// @route DELETE /api/houses/:id
-// @access Private
-const deleteHouse = async (req, res) => { 
-    res.status(200).json({message: 'Delete house ${req.params.id}'});
-};
 
 module.exports = {
-    getHouse,
-    setHouse,
-    updateHouse,
-    deleteHouse
+    getHouses,
+    setHouse
 }
