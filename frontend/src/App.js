@@ -1,7 +1,26 @@
 import logo from './logo.svg';
 import './App.css';
+import { useEffect, useState } from 'react';
 
 function App() {
+
+  const [houses, setHouses] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:5000/api/houses')
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw response
+      }) 
+      .then(data => {
+        setHouses(data);
+        console.log(data);
+      })
+      .catch(error => console.log(error)); 
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
