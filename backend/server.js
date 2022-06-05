@@ -11,10 +11,8 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use('/api/house', require('./routes/houseRoutes'));
+app.use('/houses', require('./routes/houseRoutes'));
 
-app.use(cors({
-    origin: 'http://localhost:3000'
-}));
+app.use(cors());
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
