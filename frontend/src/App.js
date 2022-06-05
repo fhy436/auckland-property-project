@@ -1,13 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
+import { Route, Router, Routes,  } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+
+import SortedBedrooms from './components/sorting/sortedBedrooms';
 
 function App() {
 
-  const [houses, setHouses] = useState([]);
+  const [houses, setHouses] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/houses')
+    fetch('http://localhost:5000/houses')
       .then(response => {
         if (response.ok) {
           return response.json();
@@ -22,22 +24,15 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <>
+      <Router>
+        <Routes>
+          <Route path="/" element={ <Homepage/>} />
+          <Route path="/quicksort" element={<SortedBedrooms houses={houses} />} />
+        </Routes>
+      </Router>
+
+      </>
   );
 }
 
