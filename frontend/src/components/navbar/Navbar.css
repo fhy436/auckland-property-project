@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/*font-family: 'Poppins', sans-serif; */
+
+.navbar-container {
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 1px 1px 9px 9px #0000000f;
+    padding: 10px;
+    padding-top: 12px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    min-width: 1920px;
+}
+
+.navbar-components {
+    width: 1920px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar-selection {
+    display: flex;
+    justify-content: space-evenly
+
+}
+
+.logo-img {
+    width: 146px;
+    height: 53px;
+    margin-left: 10px;
+    margin-right: 20px;
+
+}
+
+.navbar-selection h3 {
+    cursor: pointer;
+    margin-block-start: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 35px;
+    margin-right: 35px;
+}
+
+.form-search-container {
+    display: flex;
+    align-items: center;
+    padding-right: 160px;
+    margin-left: 60px;
+}
+
+.navbar-search-input {
+    position: relative;
+    margin-top: 10px;
+    border-radius: 10px;
+    height: 40px;
+    background-color: #00000009;
+    padding-left: 40px;
+    border: 0.1px #ADADAD solid;
+}
+
+.navbar-search-icon {
+    position: absolute;
+    margin-left: 5px;
+    color: black;
+}
+
+.navbar-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-login, .navbar-signup {
+    border-radius: 16px;
+    height: 40px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-top-color: transparent;
+    margin-left: 60px;
+    font-weight: bold;
+}
+
+.navbar-login {
+    background-color: #fff;
+    border: 1px solid #ADADAD;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.navbar-signup {
+    background-color: #B5313F;
+    border: 1px solid #B5313F;
+    color: #fff;
+    margin-left: 15px;
+}
