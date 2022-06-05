@@ -13,7 +13,7 @@ const Navbar = () => {
         <div className="navbar-container">
             <div className="navbar-components">
                 <div className="navbar-selection">
-                    <img className='logo-img' src={Logo} alt="logo" />
+                    <img className='nav-logo' src={Logo} alt="logo" />
                     <div className="navbar-headers">
                         <h3>Property Search</h3>
                         <h3>Property Management</h3>

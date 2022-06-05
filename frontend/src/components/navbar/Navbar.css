@@ -32,11 +32,11 @@
 .navbar-headers {
     width: 950px;
     display: flex;
-    margin-left: 120px;
-    margin-right: 80px;
+    margin-left: 130px;
+    margin-right: 100px;
 }
 
-.logo-img {
+.nav-logo {
     width: 146px;
     height: 53px;
 }
@@ -54,7 +54,7 @@
 .navbar-search-container {
     display: flex;
     align-items: center;
-    margin-right: 120px;
+    margin-right: 130px;
 }
 
 .navbar-search-input {
