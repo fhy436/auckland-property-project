@@ -2,6 +2,7 @@ import React from "react";
 import './Navbar.css'
 import Logo from '../../images/logo.png'
 import { Icon } from '@iconify/react'
+import { NavLink } from "react-router-dom";
 
 
 const Navbar = () => {
@@ -13,7 +14,7 @@ const Navbar = () => {
         <div className="navbar-container">
             <div className="navbar-components">
                 <div className="navbar-selection">
-                    <img className='nav-logo' src={Logo} alt="logo" />
+                    <NavLink to='/'><img className='nav-logo' src={Logo} alt="logo" /></NavLink>
                     <div className="navbar-headers">
                         <h3>Property Search</h3>
                         <h3>Property Management</h3>

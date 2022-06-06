@@ -2,6 +2,7 @@ import React from "react";
 import './Footer.css'
 import Logo from '../../images/logosquare.png'
 import { Icon } from '@iconify/react'
+import { NavLink } from "react-router-dom";
 
 const Footer = () => {
     return (
@@ -10,7 +11,7 @@ const Footer = () => {
             <div className="footer-components">
                 <div className="footer-row">
                     <div className="footer-col">
-                        <img className='footer-logo' src={Logo} alt="logo" />
+                        <NavLink to='/'><img className='footer-logo' src={Logo} alt="logo" /></NavLink>
                     </div>
                     <div className="footer-col">
                         <ul>

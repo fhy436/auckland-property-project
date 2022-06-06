@@ -1,5 +1,5 @@
 import './App.css';
-import { Route, Router, Routes,  } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 import SortedBedrooms from './components/sorting/sortedBedrooms';
@@ -26,18 +26,14 @@ function App() {
 
   return (
       <>
-      <Homepage/>
-        {/*
         <Router>
           <Routes>
-            <Route exact path="/" element={<Homepage/>} />
-            <Route path="/quicksort" element={<SortedBedrooms houses={houses} />} />
+            <Route path="/" element={<Homepage/>} />
+            <Route path="/sortedBedrooms" element={<SortedBedrooms houses={houses}/>} />
           </Routes>
-        </Router>
-        */}
-        
+        </Router>  
       </>
-  )
+  );
 }
 
 export default App;
