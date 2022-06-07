@@ -17,7 +17,6 @@ const Homepage = () => {
         <Navbar/>
         <div className="homepage-container">
             <div className="homepage-components">
-                <NavLink to="/Propertydetails"></NavLink>
             <header className="homepage-header">Search our rental properties. It's easy!</header>
             <div className="homepage-filter-container">
                 <img className="homepage-filter-image" src={FilterImage} alt="houses" />
