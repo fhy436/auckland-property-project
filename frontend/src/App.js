@@ -5,6 +5,8 @@ import { useEffect, useState } from 'react';
 import SortedBedrooms from './components/sorting/sortedBedrooms';
 //import Homepage from './pages/Homepage';
 
+import Propertydetails from "./pages/Propertydetails";
+
 function App() {
 
   const [houses, setHouses] = useState(null);
@@ -30,6 +32,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Homepage/>} />
             <Route path="/sortedBedrooms" element={<SortedBedrooms houses={houses}/>} />
+            <Route path="/Propertydetails" element={<Propertydetails></Propertydetails>}></Route>
           </Routes>
         </Router>  
       </>

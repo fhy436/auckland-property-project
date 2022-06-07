@@ -8,6 +8,7 @@ import PropertyManagement from '../images/propertymanagement.png'
 import Awards from '../images/awards.png'
 import ClientFeedback from "../images/clientfeedback.png"
 import FilterImage from '../images/filterimage.png'
+import { NavLink } from "react-router-dom";
 
 const Homepage = () => {
 
@@ -16,6 +17,7 @@ const Homepage = () => {
         <Navbar/>
         <div className="homepage-container">
             <div className="homepage-components">
+                <NavLink to="/Propertydetails"></NavLink>
             <header className="homepage-header">Search our rental properties. It's easy!</header>
             <div className="homepage-filter-container">
                 <img className="homepage-filter-image" src={FilterImage} alt="houses" />
