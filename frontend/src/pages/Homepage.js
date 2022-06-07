@@ -16,7 +16,7 @@ const Homepage = () => {
         <Navbar/>
         <div className="homepage-container">
             <div className="homepage-components">
-            <header className="homepage-header">Search our rental properties. It's easy!!!</header>
+            <header className="homepage-header">Search our rental properties. It's easy!</header>
             <div className="homepage-filter-container">
                 <img className="homepage-filter-image" src={FilterImage} alt="houses" />
                     LEAVING UNTIL LATER, NEED TO FIGURE OUT FILTERING STUFF
