@@ -7,8 +7,6 @@ import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
 
-    //const [isactive, setIsactive] = useState(false);
-
     return (
         <>
         <div className="navbar-container">
