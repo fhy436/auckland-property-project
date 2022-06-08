@@ -9,6 +9,8 @@ const houseSchema = mongoose.Schema (
         price: Number,
         bathrooms: Number,
         bedrooms: Number,
+        allowsPets: Boolean,
+        propertyType: String
     }, 
     {
         timestamps: true
