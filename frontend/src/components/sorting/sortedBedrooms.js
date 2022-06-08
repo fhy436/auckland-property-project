@@ -1,4 +1,4 @@
-import { QuickSort } from "../../quicksort";
+import { QuickSort } from "../../functions/quicksort";
 
 const SortedBedrooms = ({houses}) => {
 
