@@ -1,13 +1,13 @@
 import React from "react";
 import './Homepage.css'
-import Navbar from "../components/navbar/Navbar";
-import Footer from "../components/footer/Footer";
-import ApplicationSteps from '../images/applicationsteps.png'
-import HolidayAccommodation from '../images/holidayaccommodation.png'
-import PropertyManagement from '../images/propertymanagement.png'
-import Awards from '../images/awards.png'
-import ClientFeedback from "../images/clientfeedback.png"
-import FilterImage from '../images/filterimage.png'
+import Navbar from "../../components/navbar/Navbar";
+import Footer from "../../components/footer/Footer";
+import ApplicationSteps from '../../images/applicationsteps.png'
+import HolidayAccommodation from '../../images/holidayaccommodation.png'
+import PropertyManagement from '../../images/propertymanagement.png'
+import Awards from '../../images/awards.png'
+import ClientFeedback from "../../images/clientfeedback.png"
+import FilterImage from '../../images/filterimage.png'
 import { NavLink } from "react-router-dom";
 
 const Homepage = () => {
@@ -22,7 +22,7 @@ const Homepage = () => {
                 <img className="homepage-filter-image" src={FilterImage} alt="houses" />
                     LEAVING UNTIL LATER, NEED TO FIGURE OUT FILTERING STUFF
             </div>
-            <header className="homepage-header">How to apply</header>
+            <NavLink to="/Propertydetails"><header className="homepage-header">How to apply</header></NavLink>
             <img className="homepage-application-steps" src={ApplicationSteps} alt="application steps" />
             <header className="homepage-header">Other services we offer:</header>
             <div className="homepage-other-services-container">
