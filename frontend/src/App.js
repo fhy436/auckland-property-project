@@ -6,6 +6,7 @@ import ScrollToTop from './functions/ScrollToTop';
 import SortedBedrooms from './components/sorting/sortedBedrooms';
 import Homepage from './pages/Homepage/Homepage';
 import Propertydetails from './pages/PropertyDetailsPage/Propertydetails';
+import Searchpage from './pages/SearchPage/Searchpage';
 
 function App() {
 
@@ -33,6 +34,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Homepage/>} />
             <Route path="/sortedBedrooms" element={<SortedBedrooms houses={houses}/>} />
+            <Route path="/Searchpage" element={<Searchpage houses={houses}/>} />
             <Route path="/Propertydetails" element={<Propertydetails></Propertydetails>}></Route>
           </Routes>
         </Router>  
