@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-.house-cards-row {
+.house-cards-container {
     width: 500px;
     text-align: center;
     background-color: #EFEFEF;
