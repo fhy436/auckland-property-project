@@ -1,19 +1,18 @@
  import "./HouseCards.css";
+ import { Icon } from "@iconify/react";
 
  const HouseCards = ({houses}) => {
     return (
-        <div className="house-cards-container">
-            <div className="house-cards-components">
+            <div className="house-cards-row">
                 <img className="house-cards-image" src={houses.image} alt="house" />
                 <header className="house-cards-header">{houses.name}</header>
                 <div className="house-cards-text">
-                    {houses.address}
-                    {houses.bathrooms} bathrooms
-                    {houses.bedrooms} bedrooms
-
+                    ${houses.price}/week<br/>
+                    {houses.address} <br/>
+                    <Icon icon="cil:bathroom" className="house-card-icon" />{houses.bedrooms}
+                    <Icon icon="bx:bed" className="house-card-icon" /> {houses.bathrooms}
                 </div>
             </div>
-        </div>
         )
     }
 

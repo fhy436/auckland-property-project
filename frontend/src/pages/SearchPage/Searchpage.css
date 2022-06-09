@@ -1,0 +1,13 @@
+.search-page-container {
+    width: 1400px;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.house-cards-container {
+    display: flex;
+    flex-direction: row;
+    width: 500px;
+    height:250px;
+}
