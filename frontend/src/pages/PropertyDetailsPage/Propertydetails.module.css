@@ -1,0 +1,168 @@
+.headerimg {
+    background-image: url("../images/Property\ Photo\ and\ Images.png");
+    position: absolute;
+    width: 1396px;
+    height: 500px;
+    margin-left: 262px;
+    margin-top: 193px;
+}
+
+.title {
+    position: absolute;
+    margin-left: 262px;
+    margin-top: 761px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    color: #4D4D4D;
+}
+
+.address {
+    margin-top: 856px;
+    composes: title;
+    font-size: 20px;
+}
+
+.price {
+    composes: title;
+    font-size: 18px;
+    margin-top: 900px;
+}
+
+.date {
+    composes: price;
+    margin-left: 677px;
+}
+
+.bar {
+    position: absolute;
+    width: 830px;
+    height: 0px;
+    margin-left: 262px;
+    margin-top: 951px;
+    border: 2px solid #B5313F;
+    background-color: #B5313F;
+}
+
+.frame5 {
+    background-image: url("../images/Frame\ 5.png");
+    position: absolute;
+    width: 807.67px;
+    height: 54px;
+    left: 262px;
+    margin-top: 970px;
+}
+
+.rectangle14 {
+    background-image: url("../images/Rectangle\ 14.png");
+    position: absolute;
+    width: 405px;
+    height: 466px;
+    margin-left: 1267px;
+    margin-top: 783px;
+}
+
+.rectangle13 {
+    background-image: url("../images/Rectangle\ 13.png");
+    composes: rectangle14;
+    margin-left: 1253px;
+    margin-top: 769px;
+}
+
+.agent {
+    background-image: url("../images/Agent\ icon.png");
+    position: absolute;
+    width: 129px;
+    height: 129px;
+    margin-left: 1292px;
+    margin-top: 820px;
+}
+
+.name {
+    composes: title;
+    font-size: 20px;
+    margin-left: 1440px;
+    margin-top: 844px;
+    color: #4D4D4D;
+    font-weight: 600;
+}
+
+.email {
+    composes: name;
+    margin-top: 897px;
+    font-size: 18px;
+}
+
+.apply {
+    position: absolute;
+    width: 249px;
+    height: 70px;
+    margin-left: 1331px;
+    margin-top: 994px;
+    background: #B5313F;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+    composes: address;
+    color: #FFFFFF;
+}
+
+.book {
+    margin-top: 1085px;
+    background-color: white;
+    composes: apply;
+    color: #4D4D4D;
+}
+
+.ask {
+    margin-left: 1381px;
+    margin-top: 1176px;
+    composes: address;
+    text-decoration-line: underline;
+}
+
+.table{
+    width: 830px;
+    height: 207px;
+    margin-top: 1074px;
+    composes: frame5;
+    background-image: url("../images/Property\ Details_\ Table.png");
+}
+
+.describe {
+    margin-top: 1331px;
+    composes: title;
+    font-size: 25px;
+}
+
+.paragh {
+    width: 830px;
+    height: 351px;
+    margin-top: 1408px;
+    composes: price;
+    
+}
+
+.show {
+    text-decoration: underline;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.bar1 {
+    margin-top: 1800px;
+    composes: bar;
+}
+
+.map {
+    background-image: url("../images/direction.png");
+    position: absolute;
+    width: 827px;
+    height: 491px;
+    margin-left: 263px;
+    margin-top: 1958px;
+}
+
+.footer {
+    margin-top: 2552px;
+}
