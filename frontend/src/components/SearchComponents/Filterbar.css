@@ -1,28 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 .filterbar-container {
-    width: 300px;
-
-    padding: 20px;
-    background-color: #EFEFEF;
-
+    width: 350px;
+    margin-top: 50px;
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 50px;
+    background-color: #fafafa;
+    padding: 0px 30px 50px 30px;
+    border-radius: 16px;
+    margin-bottom: 200px;
+    box-shadow: 0px 3.29302px 3.29302px rgba(0, 0, 0, 0.25);
 }
 
 .filterbar-components {
-
+    width: 250px;
+    padding: 20px;
+    background-color: #EFEFEF;
+    border-radius: 16px;
 }
+
 
 .filterbar-header {
+    font-style: normal;
+    font-weight: 700;
     font-size: 30px;
-    font-weight: bold;
-}
-
-.filterbar-dropdown {
-    width: 150px;
-    height: 30px;
-    font-family: "Poppins", sans-serif;
-}
-
-.filterbar-label {
-    font-family: "Poppins", sans-serif;
-}
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+}  

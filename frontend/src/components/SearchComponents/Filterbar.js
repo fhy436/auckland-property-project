@@ -1,5 +1,10 @@
 import "./Filterbar.css";
 import { useState } from "react";
+import Box from "@mui/material/Box";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
 
 const Filterbar = ({ suburb, propertyType, onSuburbFilter, onBedroomFilter, onBathroomsFilter, onPropertyTypeFilter}) => {
     const [filters, setFilters] = useState({
@@ -44,83 +49,111 @@ const Filterbar = ({ suburb, propertyType, onSuburbFilter, onBedroomFilter, onBa
     return (
         <>
         <div className="filterbar-container">
-            <div className="filterbar-components">
-                <div className="filterbar-row">
-                    <header className="filterbar-header">Filters<br/></header>
+                <header className="filterbar-header">Filters<br/></header>
+
+                {/* ----------Filter by suburb----------*/}
+                <div>
+                <Box sx={{ minWidth: 120 }}>
+                    <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Suburb</InputLabel>
+                        <Select 
+                            id="filterbar-suburb" 
+                            value={filters.suburb}
+                            onChange={handleInput("suburb")}
+                            label="Suburb"
+                            >
+                            {suburb.map(suburb => (
+                                <MenuItem key={suburb} value={suburb}>{suburb}</MenuItem>
+                            ))}
+                        </Select>
+                    </FormControl>
+                </Box>
                 </div>
-                <div className="filterbar-row">
-                    <label className="filterbar-label" htmlFor="filterbar-suburb">Suburb<br/></label>
-                    <select 
-                        className="filterbar-dropdown" 
-                        id="filterbar-suburb" 
-                        onChange={handleInput("suburb")}
-                    >
-                        <option value="">Select</option>
-                        {suburb.map(suburb => (
-                            <option key={suburb} value={suburb}>{suburb}</option>
-                        ))}
-                    </select>
+
+                {/* ----------Filter by price----------*/}
+                <div>
+                <Box sx={{ minWidth: 120 }}>
+                    <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Rent per week</InputLabel>
+                        <Select 
+                                id="filterbar-price" 
+                                value=""
+                                label="Rent per week"
+                            >
+                                <MenuItem value="Select">Select</MenuItem>
+                                <MenuItem value="$300">$300</MenuItem>
+                                <MenuItem value="$400">$400</MenuItem>
+                                <MenuItem value="$500">$500</MenuItem>
+                                <MenuItem value="$600">$600</MenuItem>
+                                <MenuItem value="$700">$700</MenuItem>
+                                <MenuItem value="$800">$800</MenuItem>
+                        </Select>
+                    </FormControl>
+                </Box>
                 </div>
-                <div className="filterbar-row">
-                    <label className="filterbar-label" htmlFor="weekly-rent">Rent per week<br/></label>
-                    <select className="filterbar-dropdown" id="weekly-rent">
-                        <option value="">Any</option>
-                        <option value="">Under select</option>
-                    </select>
+
+                {/* ----------Filter by bedrooms----------*/}
+                <div>
+                <Box sx={{ minWidth: 120 }}>
+                    <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Bedrooms</InputLabel>
+                        <Select 
+                                id="filterbar-bedrooms" 
+                                value={filters.bedrooms}
+                                label="Bedrooms"
+                            >
+                                <MenuItem value="">Select</MenuItem>
+                                <MenuItem value="1">1</MenuItem>
+                                <MenuItem value="2">2</MenuItem>
+                                <MenuItem value="3">3</MenuItem>
+                                <MenuItem value="4">4</MenuItem>
+                                <MenuItem value="5">5</MenuItem>
+                        </Select>
+                    </FormControl>
+                </Box>
                 </div>
-                <div className="filterbar-row">
-                    <label className="filterbar-label" htmlFor="numberOfBedrooms">Bedrooms<br/></label>
-                    <select 
-                    className="filterbar-dropdown" 
-                    id="numberOfBedrooms"
-                    onChange={handleInput("bedrooms")}  
-                    >
-                        <option value="">Any</option>
-                        <option value="">1</option>
-                        <option value="">2</option>
-                        <option value="">3</option>
-                        <option value="">4</option>
-                        <option value="">5</option>
-                        <option value="">5+</option>
-                    </select>
+
+                {/* ----------Filter by bathrooms----------*/}
+                <div>
+                <Box sx={{ minWidth: 120 }}>
+                    <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Bathrooms</InputLabel>
+                        <Select 
+                                id="filterbar-bathrooms" 
+                                value={filters.bathrooms}
+                                label="Bathrooms"
+                            >
+                                <MenuItem value="">Select</MenuItem>
+                                <MenuItem value="1">1</MenuItem>
+                                <MenuItem value="2">2</MenuItem>
+                                <MenuItem value="3">3</MenuItem>
+                                <MenuItem value="4">4</MenuItem>
+                                <MenuItem value="5">5</MenuItem>
+                        </Select>
+                    </FormControl>
+                </Box>
                 </div>
-                <div className="filterbar-row">
-                    <label className="filterbar-label" htmlFor="numberOfBathrooms">Bathrooms<br/></label>
-                    <select 
-                    className="filterbar-dropdown" 
-                    id="numberOfBathrooms"
-                    onChange={handleInput("bathrooms")}
-                    >
-                        <option value="">Any</option>
-                        <option value="">1</option>
-                        <option value="">2</option>
-                        <option value="">3</option>
-                        <option value="">4</option>
-                        <option value="">5</option>
-                        <option value="">5+</option>
-                    </select>
-                </div>
-                <div className="filterbar-row">
-                    <label className="filterbar-label" htmlFor="propertyType">Property Type<br/></label>
-                    <select 
-                    className="filterbar-dropdown" 
-                    id="propertyType"
-                    onChange={handleInput("propertyType")}
-                    >
-                        <option value="">Any</option>
-                        {propertyType.map(propertyType => (
-                            <option key={propertyType} value={propertyType}>{propertyType}</option>
-                        ))}
-                    </select>
-                    <br/>
-                </div>
-                {/*<div className="filterbar-row">
-                    <label htmlFor="allowsPets">
-                        Pets Allowed
-                        <input type="checkbox" id="allowsPets" onChange={handleInput("allowsPets")}/>
-                    </label>
-                    </div> */}                
-            </div>
+
+                {/* ----------Filter by property type----------*/}
+                <div>
+                <Box sx={{ minWidth: 120 }}>
+                    <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Property Type</InputLabel>
+                        <Select 
+                            id="filterbar-propertyType" 
+                            value={filters.propertyType}
+                            label="Property Type"
+                            onChange={handleInput("propertyType")}
+                            >
+                            <MenuItem value="">Any</MenuItem>
+                            {propertyType.map(propertyType => (
+                                <MenuItem key={propertyType} value={propertyType}>{propertyType}</MenuItem>
+                            ))}
+                        </Select>
+                    </FormControl>
+                </Box>
+                </div>     
+
         </div>
         </>
     )

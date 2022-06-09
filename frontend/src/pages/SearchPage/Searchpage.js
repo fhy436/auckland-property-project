@@ -1,8 +1,9 @@
 import { useState } from "react";
-import HouseCards from "../../components/SearchComponents/HouseCards";
 import Navbar from "../../components/navbar/Navbar";
 import Footer from "../../components/footer/Footer";
 import Filterbar from "../../components/SearchComponents/Filterbar";
+import SearchResult from "../../components/SearchComponents/SearchResult";
+import { Grid } from "@mui/material";
 
 function Searchpage ({houses}) {
     const [allHouses, setHouses] = useState(houses);
@@ -58,24 +59,26 @@ function Searchpage ({houses}) {
 
     return (
         <>
-        <Navbar/>
-        <div className="search-page-container">
-            <Filterbar 
-                suburb={generateSuburbDataForDropdown()}
-                propertyType={generatePropertyTypeDataForDropdown()}
-                onSuburbFilter={handleFilterSuburb}
-                onBedroomsFilter={handleFilterBedrooms}
-                onBathroomsFilter={handleFilterBathrooms}
-                onPropertyTypeFilter={handleFilterPropertyType}
-            />
-            <div className="house-cards-container">
-            {allHouses.map((houses) => (
-            <HouseCards houses={houses} key={houses.__id} />
-            ))} 
-            </div>
+            <Navbar/>
+            <div className="searchpage-container">
+                <Grid container spacing={2}>
+                    <Grid item lg={3.5}>
+                    <Filterbar
+                        suburb={generateSuburbDataForDropdown()}
+                        propertyType={generatePropertyTypeDataForDropdown()}
+                        onSuburbFilter={handleFilterSuburb}
+                        onBedroomsFilter={handleFilterBedrooms}
+                        onBathroomsFilter={handleFilterBathrooms}
+                        onPropertyTypeFilter={handleFilterPropertyType}
+                    />
+                    </Grid>
 
-        </div>
-        <Footer/>
+                    <Grid item lg={6.5}>
+                        <SearchResult houses={allHouses}/>
+                    </Grid>
+                </Grid>
+            </div>
+            <Footer/>
         </>
     )
 }

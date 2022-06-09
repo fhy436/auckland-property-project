@@ -1,5 +1,5 @@
 .headerimg {
-    background-image: url("../images/Property\ Photo\ and\ Images.png");
+    background-image: url("../../images/Property\ Photo\ and\ Images.png");
     position: absolute;
     width: 1396px;
     height: 500px;
@@ -46,7 +46,7 @@
 }
 
 .frame5 {
-    background-image: url("../images/Frame\ 5.png");
+    background-image: url("../../images/Frame\ 5.png");
     position: absolute;
     width: 807.67px;
     height: 54px;
@@ -55,7 +55,7 @@
 }
 
 .rectangle14 {
-    background-image: url("../images/Rectangle\ 14.png");
+    background-image: url("../../images/Rectangle\ 14.png");
     position: absolute;
     width: 405px;
     height: 466px;
@@ -64,14 +64,14 @@
 }
 
 .rectangle13 {
-    background-image: url("../images/Rectangle\ 13.png");
+    background-image: url("../../images/Rectangle\ 13.png");
     composes: rectangle14;
     margin-left: 1253px;
     margin-top: 769px;
 }
 
 .agent {
-    background-image: url("../images/Agent\ icon.png");
+    background-image: url("../../images/Agent\ icon.png");
     position: absolute;
     width: 129px;
     height: 129px;
@@ -126,7 +126,7 @@
     height: 207px;
     margin-top: 1074px;
     composes: frame5;
-    background-image: url("../images/Property\ Details_\ Table.png");
+    background-image: url("../../images/Property\ Details_\ Table.png");
 }
 
 .describe {
@@ -155,7 +155,7 @@
 }
 
 .map {
-    background-image: url("../images/direction.png");
+    background-image: url("../../images/direction.png");
     position: absolute;
     width: 827px;
     height: 491px;

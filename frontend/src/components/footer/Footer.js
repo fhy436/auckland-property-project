@@ -11,7 +11,7 @@ const Footer = () => {
             <div className="footer-components">
                 <div className="footer-row">
                     <div className="footer-col">
-                        <NavLink to='/'><img className='footer-logo' src={Logo} alt="logo" /></NavLink>
+                        <NavLink className="Navlink" to='/'><img className='footer-logo' src={Logo} alt="logo" /></NavLink>
                     </div>
                     <div className="footer-col">
                         <ul>
