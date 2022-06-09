@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.homepage-container {
+    width: 1920px;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.homepage-components {
+    width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.homepage-header {
+    font-size: 30px;
+    font-weight: bolder;
+    text-align: center;
+    color: #4D4D4D;
+    
+}
+
+.homepage-filter-container {
+    width: 1436px;
+    height: 631px;
+    margin-top: 30px;
+    margin-bottom: 90px;
+    background-color: #EFEFEF;
+    border-radius: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
+}
+
+.homepage-filter-image {
+    padding-top: 20px;
+}
+
+.homepage-application-steps {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 120px;
+}
+
+.homepage-other-services-container {
+    width: 1250px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 75px;
+
+}
+
+.homepage-property-management, .homepage-holiday-accommodation {
+    cursor: pointer;
+}
+
+.homepage-our-awards-text {
+    color: #4B5563;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.homepage-awards {
+    width: 920px;
+    display: flex;
+    margin-top: 75px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.homepage-client-feedback-container {
+    width: 1396px;
+    height: 610px;
+    background-color: #EFEFEF;
+    border-radius: 16px;
+    margin-top: 90px;
+    margin-bottom: 150px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.homepage-header-client {
+    font-size: 30px;
+    font-weight: bolder;
+    text-align: center;
+    color: #4C4C4C;
+    padding-top: 35px;
+    padding-bottom: 90px;
+    text-shadow: 1px 1px 1px #4c4c4c;
+}
