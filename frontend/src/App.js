@@ -2,15 +2,16 @@ import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import ScrollToTop from './functions/ScrollToTop';
+import {data} from './databasedata';
 
 import SortedBedrooms from './components/sorting/sortedBedrooms';
 import Homepage from './pages/Homepage/Homepage';
 import Propertydetails from './pages/PropertyDetailsPage/Propertydetails';
 import Searchpage from './pages/SearchPage/Searchpage';
 
-
 function App() {
-
+  const houses = data;
+  /*
   const [houses, setHouses] = useState(null);
 
   useEffect(() => {
@@ -26,12 +27,13 @@ function App() {
         console.log(data);
       })
       .catch(error => console.log(error)); 
-  }, []);
+  }, []); 
+  */
 
   return (
       <>
         <Router>
-        <ScrollToTop/>
+          <ScrollToTop/>
           <Routes>
             <Route path="/" element={<Homepage/>} />
             <Route path="/sortedBedrooms" element={<SortedBedrooms houses={houses}/>} />
