@@ -8,6 +8,7 @@ import Homepage from './pages/Homepage/Homepage';
 import Propertydetails from './pages/PropertyDetailsPage/Propertydetails';
 import Searchpage from './pages/SearchPage/Searchpage';
 
+
 function App() {
 
   const [houses, setHouses] = useState(null);
@@ -30,7 +31,7 @@ function App() {
   return (
       <>
         <Router>
-          <ScrollToTop/>
+        <ScrollToTop/>
           <Routes>
             <Route path="/" element={<Homepage/>} />
             <Route path="/sortedBedrooms" element={<SortedBedrooms houses={houses}/>} />

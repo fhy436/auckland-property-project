@@ -1,5 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.house-cards-row {
+    width: 500px;
+    text-align: center;
+    background-color: #EFEFEF;
+    margin-bottom: 30px;
+    font-family: "Poppins", sans-serif;
+    border-radius: 16px;
+    
+
+}
 
 .house-cards-image {
     width: 437px;
     height: 278px;
+}
+
+.house-cards-header {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.house-cards-text {
+    font-size: 18px;
+    line-height: 30px;
 }
