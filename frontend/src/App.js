@@ -5,6 +5,7 @@ import ScrollToTop from './functions/ScrollToTop';
 import Homepage from './pages/Homepage/Homepage';
 import Propertydetails from './pages/PropertyDetailsPage/Propertydetails';
 import Searchpage from './pages/SearchPage/Searchpage';
+import BookingConfirm from './pages/Bookconfirmpage/BookingConfirm';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
             <Route path="/" element={<Homepage/>} />
             <Route path="/Searchpage" element={<Searchpage/>} />
             <Route path="/Propertydetails" element={<Propertydetails></Propertydetails>}></Route>
+            <Route path="/BookingConfirm" element={<BookingConfirm></BookingConfirm>}></Route>
           </Routes>
         </Router>  
       </>
