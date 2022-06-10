@@ -9,7 +9,7 @@ export const data = [
         image: 'https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI057164_APM57164_0.jpg',
         price: 740,
         bedrooms: 4,
-        bathrooms: "2",
+        bathrooms: 2,
         allowsPets: false,
         propertyType: 'House'
     },
@@ -21,7 +21,7 @@ export const data = [
         suburb: 'Mount Eden',
         image: 'https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI007094_APM7094_0.jpg',
         price: 600,
-        bedrooms: "3",
+        bedrooms: 3,
         bathrooms: 1,
         allowsPets: true,
         propertyType: 'House'
@@ -34,7 +34,7 @@ export const data = [
         suburb: 'Epsom',
         image: 'https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI022111_APM22111_0.jpg',
         price: 680,
-        bedrooms: "2",
+        bedrooms: 2,
         bathrooms: 2,
         allowsPets: false,
         propertyType: 'Apartment'
@@ -47,7 +47,7 @@ export const data = [
         suburb: 'City Centre',
         image: 'https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI009948_APM9948_0.jpg',
         price: 425,
-        bedrooms: "1",
+        bedrooms: 2,
         bathrooms: 1,
         allowsPets: false,
         propertyType: 'Apartment'
@@ -60,7 +60,7 @@ export const data = [
         suburb: 'Newmarket',
         image: 'https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI056935_APM56935_0.jpg',
         price: 465,
-        bedrooms: "1",
+        bedrooms: 1,
         bathrooms: 1,
         allowsPets: false,
         propertyType: 'Apartment'
@@ -73,7 +73,7 @@ export const data = [
         suburb: 'City Centre',
         image: 'https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI034308_APM34308_0.jpg',
         price: 300,
-        bedrooms: "1",
+        bedrooms: 1,
         bathrooms: 1,
         allowsPets: false,
         propertyType: 'Apartment'
@@ -87,7 +87,7 @@ export const data = [
         suburb: 'Remuera',
         image: 'https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI055768_APM55768_0.jpg',
         price: 1200,
-        bedrooms: "5",
+        bedrooms: 5,
         bathrooms: 3,
         allowsPets: true,
         propertyType: 'House'
@@ -100,7 +100,7 @@ export const data = [
         suburb: 'Parnell',
         image: 'https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI057114_APM57114_0.jpg',
         price: 730,
-        bedrooms: "2",
+        bedrooms: 2,
         bathrooms: 1,
         allowsPets: false,
         propertyType: 'Apartment'
@@ -113,9 +113,9 @@ export const data = [
         suburb: 'City Centre',
         image: 'https://www.aucklandproperty.net/wp-content/uploads/properties/RBPI036168_APM36168_0.jpg',
         price: 310,
-        bedrooms: "1",
-        bathrooms: 1,
+        bedrooms: 2,
+        bathrooms: 2,
         allowsPets: false,
-        propertyType: 'Apartment'
+        propertyType: 'House'
     }
 ]
