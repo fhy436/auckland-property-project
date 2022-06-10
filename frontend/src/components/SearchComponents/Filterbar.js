@@ -5,47 +5,128 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
+import axios from "axios";
 
-const Filterbar = ({ suburb, propertyType, onSuburbFilter, onBedroomFilter, onBathroomsFilter, onPropertyTypeFilter}) => {
-    const [filters, setFilters] = useState({
-        suburb: "",
-        price: "",
-        bedrooms: "",
-        bathrooms: "",
-        propertyType: "",
-        allowsPets: "",
-    });
 
-    const handleInput = (field) => (event) => {
-        const {value} = event.target
 
-        setFilters({
-            ...filters,
-            [field]: value,
-        });
+const Filterbar = ({setListings}) => {
+    
+    const [suburbQuery, setSuburbQuery] = useState("Any");
+    const [propertyTypeQuery, setPropertyTypeQuery] = useState("Any");
+    const [bedroomsQuery, setBedroomsQuery] = useState("Any");
+    const [bathroomsQuery, setBathroomsQuery] = useState("Any");
 
-        switch (field) {
-            case "suburb":
-                onSuburbFilter(value);
-                break;
-            case "price":
-                break;
-            case "bedrooms":
-                onBedroomFilter(value);
-                break;
-            case "bathrooms":
-                onBathroomsFilter(value);
-                break;
-            case "propertyType":
-                onPropertyTypeFilter(value);
-                break;
-            case "allowsPets":
-                break;
-            default:
-                break;
+    let searchQuery = {
+        suburb: suburbQuery,
+        propertyType: propertyTypeQuery,
+        bedrooms: bedroomsQuery,
+        bathrooms: bathroomsQuery,
+
+    };
+
+    //retrieve data from database
+    const getListings = async () => {
+        try {
+            const response = await axios.get("http://localhost:5000/houses");
+
+            if (searchQuery.suburb !== "Any" && searchQuery.propertyType !== "Any" && searchQuery.bedrooms !== "Any" && searchQuery.bathrooms !== "Any") {
+                setListings(response.data.filter(listing => listing.suburb === searchQuery.suburb && listing.propertyType === searchQuery.propertyType && listing.bedrooms === searchQuery.bedrooms && listing.bathrooms === searchQuery.bathrooms));
+
+            }
+            else if (searchQuery.suburb !== "Any" && searchQuery.propertyType !== "Any" && searchQuery.bedrooms !== "Any") {
+                setListings(response.data.filter(listing => listing.suburb === searchQuery.suburb && listing.propertyType === searchQuery.propertyType && listing.bedrooms === searchQuery.bedrooms));
+            }
+
+            else if (searchQuery.suburb !== "Any" && searchQuery.propertyType !== "Any" && searchQuery.bathrooms !== "Any") {
+                setListings(response.data.filter(listing => listing.suburb === searchQuery.suburb && listing.propertyType === searchQuery.propertyType && listing.bathrooms === searchQuery.bathrooms));
+            }
+
+            else if (searchQuery.suburb !== "Any" && searchQuery.bedrooms !== "Any" && searchQuery.bathrooms !== "Any") {
+                setListings(response.data.filter(listing => listing.suburb === searchQuery.suburb && listing.bedrooms === searchQuery.bedrooms && listing.bathrooms === searchQuery.bathrooms));
+            }
+
+            else if (searchQuery.propertyType !== "Any" && searchQuery.bedrooms !== "Any" && searchQuery.bathrooms !== "Any") {
+                setListings(response.data.filter(listing => listing.propertyType === searchQuery.propertyType && listing.bedrooms === searchQuery.bedrooms && listing.bathrooms === searchQuery.bathrooms));
+            }
+
+            else if (searchQuery.suburb !== "Any" && searchQuery.propertyType !== "Any") {
+                setListings(response.data.filter(listing => listing.suburb === searchQuery.suburb && listing.propertyType === searchQuery.propertyType));
+            }
+
+            else if (searchQuery.suburb !== "Any" && searchQuery.bedrooms !== "Any") {
+                setListings(response.data.filter(listing => listing.suburb === searchQuery.suburb && listing.bedrooms === searchQuery.bedrooms));
+            }
+
+            else if (searchQuery.suburb !== "Any" && searchQuery.bathrooms !== "Any") {
+                setListings(response.data.filter(listing => listing.suburb === searchQuery.suburb && listing.bathrooms === searchQuery.bathrooms));
+            }
+
+            else if (searchQuery.propertyType !== "Any" && searchQuery.bedrooms !== "Any") {
+                setListings(response.data.filter(listing => listing.propertyType === searchQuery.propertyType && listing.bedrooms === searchQuery.bedrooms));
+            }
+
+            else if (searchQuery.propertyType !== "Any" && searchQuery.bathrooms !== "Any") {
+                setListings(response.data.filter(listing => listing.propertyType === searchQuery.propertyType && listing.bathrooms === searchQuery.bathrooms));
+            }
+
+            else if (searchQuery.bedrooms !== "Any" && searchQuery.bathrooms !== "Any") {
+                setListings(response.data.filter(listing => listing.bedrooms === searchQuery.bedrooms && listing.bathrooms === searchQuery.bathrooms));
+            }
+
+            else if (searchQuery.suburb !== "Any") {
+                setListings(response.data.filter(listing => listing.suburb === searchQuery.suburb));
+            }
+
+            else if (searchQuery.propertyType !== "Any") {
+                setListings(response.data.filter(listing => listing.propertyType === searchQuery.propertyType));
+            }
+            
+            else if (searchQuery.bedrooms !== "Any") {
+                setListings(response.data.filter(listing => listing.bedrooms === searchQuery.bedrooms));
+            }
+
+            else if (searchQuery.bathrooms !== "Any") {
+                setListings(response.data.filter(listing => listing.bathrooms === searchQuery.bathrooms));
+            }
+
+            else {
+                setListings(response.data);
+            }
+
+
+
         }
+        catch (error) {
+            console.log(error);
+        }
+
     }
-       
+
+    //update the search query based on user selection
+    const handleSuburbChange = (event) => {
+        setSuburbQuery(event.target.value);
+    }
+
+    const handlePropertyTypeChange = (event) => {
+        setPropertyTypeQuery(event.target.value);
+    }
+
+    const handleBedroomsChange = (event) => {
+        setBedroomsQuery(event.target.value);
+    }
+
+    const handleBathroomsChange = (event) => {
+        setBathroomsQuery(event.target.value);
+    }
+
+    const handleClear = (event) => {
+        setSuburbQuery("Any");
+        setPropertyTypeQuery("Any");
+        setBedroomsQuery("Any");
+        setBathroomsQuery("Any");
+        }
+    
+
     return (
         <>
         <div className="filterbar-container">
@@ -58,77 +139,17 @@ const Filterbar = ({ suburb, propertyType, onSuburbFilter, onBedroomFilter, onBa
                         <InputLabel id="demo-simple-select-label">Suburb</InputLabel>
                         <Select 
                             id="filterbar-suburb" 
-                            value={filters.suburb}
-                            onChange={handleInput("suburb")}
                             label="Suburb"
+                            value={suburbQuery}
+                            onChange={handleSuburbChange}
                             >
-                            {suburb.map(suburb => (
-                                <MenuItem key={suburb} value={suburb}>{suburb}</MenuItem>
-                            ))}
-                        </Select>
-                    </FormControl>
-                </Box>
-                </div>
-
-                {/* ----------Filter by price----------*/}
-                <div>
-                <Box sx={{ minWidth: 120 }}>
-                    <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Rent per week</InputLabel>
-                        <Select 
-                                id="filterbar-price" 
-                                value=""
-                                label="Rent per week"
-                            >
-                                <MenuItem value="Select">Select</MenuItem>
-                                <MenuItem value="$300">$300</MenuItem>
-                                <MenuItem value="$400">$400</MenuItem>
-                                <MenuItem value="$500">$500</MenuItem>
-                                <MenuItem value="$600">$600</MenuItem>
-                                <MenuItem value="$700">$700</MenuItem>
-                                <MenuItem value="$800">$800</MenuItem>
-                        </Select>
-                    </FormControl>
-                </Box>
-                </div>
-
-                {/* ----------Filter by bedrooms----------*/}
-                <div>
-                <Box sx={{ minWidth: 120 }}>
-                    <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Bedrooms</InputLabel>
-                        <Select 
-                                id="filterbar-bedrooms" 
-                                value={filters.bedrooms}
-                                label="Bedrooms"
-                            >
-                                <MenuItem value="">Select</MenuItem>
-                                <MenuItem value="1">1</MenuItem>
-                                <MenuItem value="2">2</MenuItem>
-                                <MenuItem value="3">3</MenuItem>
-                                <MenuItem value="4">4</MenuItem>
-                                <MenuItem value="5">5</MenuItem>
-                        </Select>
-                    </FormControl>
-                </Box>
-                </div>
-
-                {/* ----------Filter by bathrooms----------*/}
-                <div>
-                <Box sx={{ minWidth: 120 }}>
-                    <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Bathrooms</InputLabel>
-                        <Select 
-                                id="filterbar-bathrooms" 
-                                value={filters.bathrooms}
-                                label="Bathrooms"
-                            >
-                                <MenuItem value="">Select</MenuItem>
-                                <MenuItem value="1">1</MenuItem>
-                                <MenuItem value="2">2</MenuItem>
-                                <MenuItem value="3">3</MenuItem>
-                                <MenuItem value="4">4</MenuItem>
-                                <MenuItem value="5">5</MenuItem>
+                            <MenuItem value={"Any"}>Any</MenuItem>
+                            <MenuItem value={"City Centre"}>City Centre</MenuItem>
+                            <MenuItem value={"Epsom"}>Epsom</MenuItem>
+                            <MenuItem value={"Newmarket"}>Newmarket</MenuItem>
+                            <MenuItem value={"Mount Eden"}>Mount Eden</MenuItem>
+                            <MenuItem value={"Parnell"}>Parnell</MenuItem>
+                            <MenuItem value={"Remuera"}>Remuera</MenuItem>
                         </Select>
                     </FormControl>
                 </Box>
@@ -141,23 +162,76 @@ const Filterbar = ({ suburb, propertyType, onSuburbFilter, onBedroomFilter, onBa
                         <InputLabel id="demo-simple-select-label">Property Type</InputLabel>
                         <Select 
                             id="filterbar-propertyType" 
-                            value={filters.propertyType}
                             label="Property Type"
-                            onChange={handleInput("propertyType")}
+                            value={propertyTypeQuery}
+                            onChange={handlePropertyTypeChange}
                             >
-                            <MenuItem value="">Any</MenuItem>
-                            {propertyType.map(propertyType => (
-                                <MenuItem key={propertyType} value={propertyType}>{propertyType}</MenuItem>
-                            ))}
+                            <MenuItem value={"Any"}>Any</MenuItem>
+                            <MenuItem value={"Apartment"}>Apartment</MenuItem>
+                            <MenuItem value={"House"}>House</MenuItem>
+                            
                         </Select>
                     </FormControl>
                 </Box>
+                </div>
+
+                {/* ----------Filter by bedrooms----------*/}
+                <div>
+                <Box sx={{ minWidth: 120 }}>
+                    <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Bedrooms</InputLabel>
+                        <Select
+                            id="filterbar-bedrooms"
+                            label="Bedrooms"
+                            value={bedroomsQuery}
+                            onChange={handleBedroomsChange}
+                            >
+                            <MenuItem value={"Any"}>Any</MenuItem>
+                            <MenuItem value={1}>1</MenuItem>
+                            <MenuItem value={2}>2</MenuItem>
+                            <MenuItem value={3}>3</MenuItem>
+                            <MenuItem value={4}>4</MenuItem>
+                            <MenuItem value={5}>5</MenuItem>
+                        </Select>
+                    </FormControl>
+                </Box>
+                </div>
+
+                
+
+                <div>
+                <Box sx={{ minWidth: 120 }}>
+                    <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Bathrooms</InputLabel>
+                        <Select
+                            id="filterbar-bathrooms"
+                            label="Bathrooms"
+                            value={bathroomsQuery}
+                            onChange={handleBathroomsChange}
+                            >
+                            <MenuItem value={"Any"}>Any</MenuItem>
+                            <MenuItem value={1}>1</MenuItem>
+                            <MenuItem value={2}>2</MenuItem>
+                            <MenuItem value={3}>3</MenuItem>
+                            <MenuItem value={4}>4</MenuItem>
+                            <MenuItem value={5}>5</MenuItem>
+                        </Select>
+                    </FormControl>
+                </Box>
+                </div>
+
+                <div>
+                {/* ----------Filter listings----------*/}
+                <button type="button" className="search-button" onClick={getListings}>SEARCH</button>
+                </div>
+                <div>
+                <button type="button" className="clear-filters-button" onClick={handleClear}>Clear Filters</button>
                 </div>     
 
         </div>
         </>
     )
-}
+};
 
-export default Filterbar
+export default Filterbar;
         

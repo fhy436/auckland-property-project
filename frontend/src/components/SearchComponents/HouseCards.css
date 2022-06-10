@@ -9,7 +9,7 @@
     margin-right: 10px;
     margin-left: 40px;
     margin-top: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     padding-top: 20px;
     border-radius: 16px;
     font-family: 'Poppins', sans-serif;
@@ -25,9 +25,12 @@
 }
 
 .house-cards-header {
+    margin-left: 10px;
+    margin-right: 10px;
     font-size: 25px;
     font-weight: bold;
     margin-bottom: 15px;
+    text-align: center;
 }
 
 .house-cards-text {

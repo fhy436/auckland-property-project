@@ -2,7 +2,7 @@
 
 .filterbar-container {
     width: 350px;
-    margin-top: 50px;
+    margin-top: 130px;
     margin-left: auto;
     display: flex;
     flex-direction: column;
@@ -13,6 +13,7 @@
     border-radius: 16px;
     margin-bottom: 200px;
     box-shadow: 0px 3.29302px 3.29302px rgba(0, 0, 0, 0.25);
+    font-family: 'Poppins', sans-serif;
 }
 
 .filterbar-components {
@@ -30,4 +31,44 @@
     margin-top: 30px;
     display: flex;
     align-items: center;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
 }  
+
+.search-button {
+    display: flex;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 250px;
+    background-color: #B5313F;
+    border-radius: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    color: white;
+    font-size: 20px;
+    font-weight: bolder;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.clear-filters-button {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 250px;
+    background-color: white;
+    border-radius: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    color: black;
+    font-size: 20px;
+    font-weight: bolder;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
