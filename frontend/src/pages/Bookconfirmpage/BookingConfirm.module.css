@@ -1,0 +1,72 @@
+.bookcnfmtitle {
+    position: absolute;
+    width: 549px;
+    height: 104px;
+    margin-left: 685px;
+    margin-top: 202px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 38px;
+    align-items: center;
+    text-align: center;
+}
+
+.bookcnfmtitlespan {
+    color: #B5313F;
+}
+
+.rectangle26 {
+    background-image: url("../images/BookRectangle\ 26.png");
+    position: absolute;
+    width: 1093px;
+    height: 442px;
+    margin-left: 424px;
+    margin-top: 392px;
+    background: #B5313F;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+}
+
+.rectangle25 {
+    composes: rectangle26;
+    background-image: url("../images/BookRectangle\ 25.png");
+    margin-left: 403px;
+    width: 1100px;
+    margin-top: 378px;
+    background-color: white;
+    border: 1px solid #4D4D4D;
+    
+}
+
+.bookgroup16 {
+    background-image: url("../images/BookGroup\ 16.png");
+    position: absolute;
+    width: 930px;
+    height: 230px;
+    margin-left: 497px;
+    margin-top: 424px;
+}
+
+.bookframe {
+    background-image: url("../images/BookFrame\ 1966.png");
+    composes: bookgroup16;
+    margin-top: 712px;
+    height: 63px;
+
+}
+
+.btnbookanother {
+    composes: apply from "./Propertydetails.module.css";
+    margin-left: 820px;
+    margin-top: 913px;
+    width: 290px;
+    padding: 20px 35px;
+
+}
+
+.bookfooter {
+    margin-top: 1171px;
+}
+

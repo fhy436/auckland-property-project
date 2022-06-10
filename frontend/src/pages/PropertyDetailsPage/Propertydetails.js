@@ -35,7 +35,7 @@ const Propertydetails = () => {
             <div className={styles.name}>Vivian Smith</div>
             <div className={styles.email}>VivianS@apm.co.nz</div>
             <button className={styles.apply}>Apply Now </button>
-            <button className={styles.book}>Book a Viewing</button>
+            <NavLink to="/Bookingconfirm"><button className={styles.book}>Book a Viewing</button></NavLink>
             <div className={styles.ask}>Ask a Question</div>
             <div className={styles.table}></div>
             <div className={styles.describe}>Property Description</div>

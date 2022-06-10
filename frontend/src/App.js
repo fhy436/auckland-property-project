@@ -8,6 +8,7 @@ import SortedBedrooms from './components/sorting/sortedBedrooms';
 import Homepage from './pages/Homepage/Homepage';
 import Propertydetails from './pages/PropertyDetailsPage/Propertydetails';
 import Searchpage from './pages/SearchPage/Searchpage';
+import BookingConfirm from './pages/Bookconfirmpage/BookingConfirm';
 
 function App() {
   const houses = data;
@@ -39,6 +40,7 @@ function App() {
             <Route path="/sortedBedrooms" element={<SortedBedrooms houses={houses}/>} />
             <Route path="/Searchpage" element={<Searchpage houses={houses}/>} />
             <Route path="/Propertydetails" element={<Propertydetails></Propertydetails>}></Route>
+            <Route path="/BookingConfirm" element={<BookingConfirm></BookingConfirm>}></Route>
           </Routes>
         </Router>  
       </>
