@@ -1,19 +1,27 @@
 import "./SearchResult.css";
-import { Icon } from "@iconify/react";
-import { NavLink } from "react-router-dom";
 import HouseCards from "./HouseCards";
 
-const SearchResult = ({houses}) => {
+const SearchResult = ({listings}) => {
    return (
+       <>
+        <header className="search-result-header">Properties for rent</header>
            <div className="search-result-container">
-                    {houses.map((houses) => {
+                    {listings.map((listings) => {
                         return (
-                            <HouseCards houses={houses} key={houses.__id}/>
+                            <HouseCards 
+                            image={listings.image}
+                            name={listings.name}
+                            price={listings.price}
+                            address={listings.address}
+                            bedrooms={listings.bedrooms}
+                            bathrooms={listings.bathrooms}
+                            />
                         )
                     })
                 }
                     
             </div>
+        </>
     )
 }
 
