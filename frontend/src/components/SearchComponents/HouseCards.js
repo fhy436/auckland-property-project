@@ -10,8 +10,8 @@
             <div className="house-cards-text">
                 <span className="house-price">${price}/week<br/></span>
                 {address} <br/>
-                <Icon icon="cil:bathroom" className="house-card-icon" />{" "}{bedrooms} {'             '}
-                <Icon icon="bx:bed" className="house-card-icon" />{"  "}{bathrooms}
+                <Icon icon="bx:bed" className="house-card-icon" />{" "}{bedrooms} {'             '}
+                <Icon icon="cil:bathroom" className="house-card-icon" />{"  "}{bathrooms}
             </div>
         </div>
         )
